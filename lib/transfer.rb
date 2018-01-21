@@ -30,6 +30,7 @@ class Transfer
   def reverse_transfer
     sender.balance += amount
     receiver.balance -= amount
+    self.status = 
   end
   
 end
