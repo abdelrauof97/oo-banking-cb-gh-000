@@ -15,10 +15,10 @@ class Transfer
   end
   
   def execute_transaction
-    amount -= amount
     (sender.balance -= amount).freeze
     (receiver.balance += amount).freeze
     self.status = "complete"
+    amount -= amount
   end
   
 end
