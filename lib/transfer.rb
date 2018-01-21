@@ -21,6 +21,8 @@ class Transfer
       receiver.balance += amount
       self.status = "complete"
       @transfered_amount = amount
+    elsif !sender.valid?
+      
     end
   end
   
