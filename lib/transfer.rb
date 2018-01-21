@@ -18,7 +18,7 @@ class Transfer
     (sender.balance -= amount).freeze
     (receiver.balance += amount).freeze
     self.status = "complete"
-    amount -= amount
+    
   end
   
 end
