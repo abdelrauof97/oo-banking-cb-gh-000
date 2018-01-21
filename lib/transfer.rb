@@ -1,9 +1,9 @@
 class Transfer
   
   attr_accessor
-  attr_reader
+  attr_reader :sender, :receiver, :amount
   
-  def initialize(sender,)
+  def initialize(sender,receiver,amount)
     
   end
   
