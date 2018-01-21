@@ -1,6 +1,6 @@
 class Transfer
   
-  attr_accessor :status, :amount
+  attr_accessor :status, :amount, :transfeted_amount
   attr_reader :sender, :receiver
   
   def initialize(sender,receiver,amount)
@@ -8,6 +8,7 @@ class Transfer
     @receiver = receiver
     @amount = amount
     @status = "pending"
+    @transfeted_amount = 0 
   end
   
   def valid?
@@ -15,10 +16,11 @@ class Transfer
   end
   
   def execute_transaction
-    sender.balance -= amount
-    receiver.balance += amount
-    self.status = "complete"
-    
+    if @transfeted_amount > 0 
+      sender.balance -= amount
+      receiver.balance += amount
+      self.status = "complete"
+    end
   end
   
 end
